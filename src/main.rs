@@ -71,7 +71,7 @@ fn mutate(
 
     //reset
     for agent in agents {
-        agent.pos = Vec2::new(1800.0, 820.0);
+        agent.pos = Vec2::new(1300.0, 550.0);
         agent.vel = Vec2::new(0.0, 0.0);
         agent.acc = Vec2::new(0.0, 0.0);
         agent.is_dead = false;
@@ -83,16 +83,15 @@ fn mutate(
 #[macroquad::main("MyGame")]
 async fn main() {
     //Basic window config
-    let x_pos = -1930i32 as u32;
-    set_window_position(x_pos, 0);
-    set_window_size(1920, 1050);
+    set_window_position(0, 0);
+    set_window_size(1440, 720);
 
-    let rect = Rect::new(40.0, 32.5, 1860.0, 960.0);
-    let rect1 = Rect::new(40.0, 312.5, 1360.0, 15.0);
-    let rect2 = Rect::new(540.0, 632.5, 1360.0, 15.0);
-    let checkpoint1 = Rect::new(1400.0, 312.5, 485.0, 15.0);
-    let checkpoint2 = Rect::new(55.0, 632.5, 485.0, 15.0);
-    let finish = Rect::new(140.0, 47.5, 15.0, 265.0);
+    let rect = Rect::new(40.0, 32.5, 1360.0, 640.0);
+    let rect1 = Rect::new(40.0, 212.5, 1060.0, 15.0);
+    let rect2 = Rect::new(340.0, 432.5, 1060.0, 15.0);
+    let checkpoint1 = Rect::new(1100.0, 212.5, 285.0, 15.0);
+    let checkpoint2 = Rect::new(55.0, 432.5, 285.0, 15.0);
+    let finish = Rect::new(140.0, 47.5, 15.0, 165.0);
 
     let mut agents: Vec<Agent> = Vec::new();
     let rng = rand::RandGenerator::new();
@@ -108,7 +107,7 @@ async fn main() {
         }
 
         let agent = Agent {
-            pos: Vec2::new(1800.0, 820.0),
+            pos: Vec2::new(1300.0, 550.0),
             vel: Vec2::new(0.0, 0.0),
             acc: Vec2::new(0.0, 0.0),
             dna: dna,
